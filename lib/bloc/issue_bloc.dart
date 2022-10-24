@@ -52,17 +52,16 @@ class IssueBloc {
   }) async {
     apiService
         .reportIssue(
-          title: issue.title ?? '',
-          content: issue.content ?? '',
+      title: issue.title ?? '',
+      content: issue.content ?? '',
       photos: issue.photos!.join('|') ?? '',
-        )
+    )
         .then((value) {
-          _issueStreamController.add(value);
+      _issueStreamController.add(value);
 
-          issues.add(value);
-          _listIssueStreamController.add(issues);
-    })
-        .catchError((e) {
+      // issues.add(value);
+      // _listIssueStreamController.add(issues);
+    }).catchError((e) {
       _issueStreamController.addError(e.toString());
     });
   }

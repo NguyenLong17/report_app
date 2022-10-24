@@ -6,6 +6,7 @@ import 'package:report_app/common/widgets/confirm_dialog.dart';
 import 'package:report_app/common/widgets/progress_dialog.dart';
 import 'package:report_app/common/widgets/toast_overlay.dart';
 import 'package:report_app/page/account/account_page.dart';
+import 'package:report_app/page/account/change_password_page.dart';
 import 'package:report_app/page/account/login_page.dart';
 import 'package:report_app/page/issue_page.dart';
 import 'package:report_app/page/report_page.dart';
@@ -165,7 +166,7 @@ class _DrawerPageState extends State<DrawerPage> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             onTap: () {
-              navigatorPush(context, const AccountPage());
+              navigatorPush(context,  ChangePasswordPage());
             },
           ),
           Divider(

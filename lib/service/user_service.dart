@@ -80,6 +80,25 @@ extension UserService on APIService {
     return profileUser;
   }
 
+  Future<bool> changePassword({
+    required String oldPassword,
+    required String newPassword,
+  }) async {
+    final body = {
+      "OldPassword": oldPassword,
+      "NewPassword": newPassword,
+    };
+
+    final result = await request(
+      path: '/api/accounts/changePassword',
+      body: body,
+      method: Method.post,
+    );
+
+    // final user = User.fromJson(result);
+    return true;
+  }
+
 
 
 

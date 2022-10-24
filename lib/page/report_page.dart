@@ -22,7 +22,6 @@ class _ReportPageState extends State<ReportPage> {
   final _titleController = TextEditingController();
   final _contentController = TextEditingController();
 
-
   final picker = ImagePicker();
   late IssueBloc bloc;
 
@@ -101,34 +100,11 @@ class _ReportPageState extends State<ReportPage> {
             mainAxisSpacing: 5,
           ),
           itemBuilder: (context, index) {
-
             final newImage = photos[index];
-
-            return Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: SizedBox(
-                    height: 64,
-                    width: 64,
-                    child: Image.network(newImage),
-                  ),
-                ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: IconButton(
-                    onPressed: () {
-                    },
-                    icon: const Icon(
-                      Icons.remove_circle_outline_sharp,
-                      color: Colors.red,
-                    ),
-                  ),
-                ),
-              ],
-            );
-
+            if (index == photos.length) {
+              return addImage();
+            }
+            return listImage(newImage);
           },
           itemCount: photos.length ,
         ),
@@ -144,11 +120,13 @@ class _ReportPageState extends State<ReportPage> {
   }
 
   void reportIssue() {
-    apiService.reportIssue(
+    apiService
+        .reportIssue(
       title: _titleController.text ?? '',
       content: _contentController.text ?? '',
       photos: photos.join('|') ?? '',
-    ).then((issue) {
+    )
+        .then((issue) {
       bloc.reportIssue(issue: issue);
       ToastOverlay(context).showToastOverlay(
           message: 'Đã thêm bài viết ${issue.title} thành công',
@@ -188,5 +166,45 @@ class _ReportPageState extends State<ReportPage> {
       ToastOverlay(context).showToastOverlay(
           message: 'Có lỗi xảy ra: ${e.toString()}', type: ToastType.error);
     });
+  }
+
+  Widget addImage() {
+    return GestureDetector(
+        onTap: () {
+          selectImage(source: ImageSource.gallery);
+        },
+        child: Image.asset('assets/images/add.png'));
+  }
+
+  Widget listImage(String image) {
+    return Stack(
+      children: [
+        ClipRRect(
+          child: SizedBox(
+            height: 64,
+            width: 64,
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Positioned(
+          top: 0,
+          right: 0,
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                photos.remove(image);
+              });
+            },
+            icon: const Icon(
+              Icons.remove_circle_outline_sharp,
+              color: Colors.red,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

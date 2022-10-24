@@ -6,7 +6,7 @@ import 'package:report_app/common/widgets/mybutton.dart';
 import 'package:report_app/common/widgets/mytextfield.dart';
 import 'package:report_app/common/widgets/progress_dialog.dart';
 import 'package:report_app/common/widgets/toast_overlay.dart';
-import 'package:report_app/page/account/registerPage.dart';
+import 'package:report_app/page/account/register_page.dart';
 import 'package:report_app/page/home_page.dart';
 import 'package:report_app/service/api_service.dart';
 import 'package:report_app/service/user_service.dart';
