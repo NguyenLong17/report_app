@@ -40,7 +40,7 @@ class _DrawerPageState extends State<DrawerPage> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          if(apiService.user!.avatar!.isNotEmpty)...{
+          if(apiService.user?.avatar != null)...{
             DrawerHeader(
               decoration: const BoxDecoration(
                 color: Colors.blue,
@@ -58,7 +58,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         height: 60,
                         decoration: const BoxDecoration(),
                         child: Image.network(
-                          apiService.user!.avatar!,
+                          apiService.user?.avatar! ?? baseAddImageNetwork,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -69,14 +69,14 @@ class _DrawerPageState extends State<DrawerPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            apiService.user!.name ?? '',
+                            apiService.user?.name ?? '',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 4,
                           ),
                           Text(
-                            apiService.user!.phoneNumber ?? '',
+                            apiService.user?.phoneNumber ?? '',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -115,14 +115,14 @@ class _DrawerPageState extends State<DrawerPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            apiService.user!.name ?? '',
+                            apiService.user?.name ?? '',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 4,
                           ),
                           Text(
-                            apiService.user!.phoneNumber ?? '',
+                            apiService.user?.phoneNumber ?? '',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ],

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:report_app/common/util/navigator.dart';
 import 'package:report_app/common/widgets/appbar.dart';
 import 'package:report_app/common/widgets/mybutton.dart';
 import 'package:report_app/common/widgets/mytextfield.dart';
 import 'package:report_app/common/widgets/toast_overlay.dart';
+import 'package:report_app/page/account/login_page.dart';
 import 'package:report_app/service/api_service.dart';
 import 'package:report_app/service/user_service.dart';
 
@@ -63,6 +65,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             newPassword: _newPasswordController.text)
         .then((value) {
           ToastOverlay(context).showToastOverlay(message: 'Đổi mật khẩu thành công', type: ToastType.success);
+          navigatorPushAndRemoveUntil(context, LoginPage());
     })
         .catchError((e) {
       ToastOverlay(context).showToastOverlay(message: 'Có lỗi xảy ra: ${e.toString()}', type: ToastType.error);

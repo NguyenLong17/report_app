@@ -100,13 +100,20 @@ class _ReportPageState extends State<ReportPage> {
             mainAxisSpacing: 5,
           ),
           itemBuilder: (context, index) {
-            final newImage = photos[index];
-            if (index == photos.length) {
+            final image = photos[index];
+            print('list anh: ${photos.length}');
+            if (photos.isNotEmpty) {
+              if (index == photos.length) {
+                return addImage();
+              } else {
+                return listImage(image);
+              }
+            } else {
               return addImage();
             }
-            return listImage(newImage);
+
           },
-          itemCount: photos.length ,
+          itemCount: photos.length + 1,
         ),
         MyButton(
             textButton: 'Thêm',
@@ -146,7 +153,6 @@ class _ReportPageState extends State<ReportPage> {
       );
       if (image != null) {
         uploadData(image);
-        // photos.add(image);
       }
     } catch (e) {
       ToastOverlay(context)
@@ -173,7 +179,7 @@ class _ReportPageState extends State<ReportPage> {
         onTap: () {
           selectImage(source: ImageSource.gallery);
         },
-        child: Image.asset('assets/images/add.png'));
+        child: Image.asset('assets/images/add.PNG'));
   }
 
   Widget listImage(String image) {

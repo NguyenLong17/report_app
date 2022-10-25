@@ -9,7 +9,6 @@ class APIService {
   static final _service = APIService._internal();
 
   factory APIService() => _service;
-  // var token = "";
    User? user;
 
 
@@ -25,7 +24,7 @@ class APIService {
     final uri = Uri.parse(baseUrl + path);
     http.Response response;
     final headers = {
-      'Authorization': 'Bearer ${user!.token}',
+      'Authorization': 'Bearer ${user?.token}',
     };
 
     if (file != null) {

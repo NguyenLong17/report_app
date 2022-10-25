@@ -95,7 +95,6 @@ extension UserService on APIService {
       method: Method.post,
     );
 
-    // final user = User.fromJson(result);
     return true;
   }
 
