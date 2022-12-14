@@ -140,6 +140,7 @@ class _DrawerPageState extends State<DrawerPage> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             onTap: () {
+              Navigator.of(context).pop();
               navigatorPush(context, const IssuePage());
             },
           ),
@@ -153,6 +154,7 @@ class _DrawerPageState extends State<DrawerPage> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             onTap: () {
+              Navigator.of(context).pop();
               navigatorPush(context, const ReportPage());
             },
           ),
@@ -166,6 +168,7 @@ class _DrawerPageState extends State<DrawerPage> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             onTap: () {
+              Navigator.of(context).pop();
               navigatorPush(context,  ChangePasswordPage());
             },
           ),

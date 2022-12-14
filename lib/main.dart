@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:report_app/page/account/login_page.dart';
 import 'package:report_app/page/home_page.dart';
 import 'package:report_app/page/issue_page.dart';
+import 'package:report_app/page/page_demo/ex_test/location_page.dart';
+import 'package:report_app/page/page_demo/location_map_page.dart';
 import 'package:report_app/page/splash_page.dart';
 
 void main() {
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
       // home: ImagePickerPage(),
       // home: IssuePage(),
       home: SplashPage(),
+      // home: LocationPage(),
+      // home: LocationMapPage(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 AppBar buildAppBar({
   required BuildContext context,
   required String title,
+  Color? color,
   List<Widget>? actions,
   Widget? leading,
 }) {
@@ -17,7 +18,7 @@ AppBar buildAppBar({
         fontWeight: FontWeight.w600,
       ),
     ),
-    backgroundColor: Colors.blue,
+    backgroundColor: color ?? Colors.blue,
     actions: actions,
   );
 }

@@ -24,6 +24,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+    <string>App cần truy cập vị trí của bạn để chọn vị trí đón. Vị trí của bạn sẽ không được chia sẻ nếu không có sự cho phép của bạn.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>App cần truy cập vị trí của bạn để chọn vị trí đón. Vị trí của bạn sẽ không được chia sẻ nếu không có sự cho phép của bạn.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

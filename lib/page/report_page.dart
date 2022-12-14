@@ -100,18 +100,12 @@ class _ReportPageState extends State<ReportPage> {
             mainAxisSpacing: 5,
           ),
           itemBuilder: (context, index) {
-            final image = photos[index];
-            print('list anh: ${photos.length}');
-            if (photos.isNotEmpty) {
-              if (index == photos.length) {
-                return addImage();
-              } else {
-                return listImage(image);
-              }
-            } else {
+
+            if(index == photos.length) {
               return addImage();
             }
-
+            final image = photos[index];
+            return listImage(image);
           },
           itemCount: photos.length + 1,
         ),

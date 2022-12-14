@@ -26,7 +26,7 @@ class IssueBloc {
 
     progressDialog.show();
 
-    await Future.delayed(const Duration(seconds: 2));
+    // await Future.delayed(const Duration(seconds: 2));
     await apiService
         .getIssue(offset: isClear ? 0 : issues.length)
         .then((value) {

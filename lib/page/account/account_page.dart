@@ -77,7 +77,7 @@ class _AccountPageState extends State<AccountPage> {
           //     ],
           //   ),
           // }
-          if (url.isNotEmpty) ...{
+          if (url.isEmpty) ...{
             Stack(
               children: [
                 ClipRRect(

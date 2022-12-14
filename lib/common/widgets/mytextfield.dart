@@ -88,6 +88,7 @@ class MyTextField extends StatelessWidget {
           ),
           decoration: InputDecoration(
             hintText: hintText,
+            // counterText: ,
             hintStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
