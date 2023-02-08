@@ -59,8 +59,8 @@ class IssueBloc {
         .then((value) {
       _issueStreamController.add(value);
 
-      // issues.add(value);
-      // _listIssueStreamController.add(issues);
+      issues.add(value);
+      _listIssueStreamController.add(issues);
     }).catchError((e) {
       _issueStreamController.addError(e.toString());
     });

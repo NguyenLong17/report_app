@@ -45,6 +45,7 @@ class _IssuePageState extends State<IssuePage> {
         }
         if (snapshot.hasData) {
           final issues = snapshot.data ?? [];
+          print('_IssuePageState.buildList: ${issues.length}');
           return ListView.separated(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             itemBuilder: (context, index) {

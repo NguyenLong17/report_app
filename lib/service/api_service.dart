@@ -56,6 +56,7 @@ class APIService {
           break;
       }
     }
+    print('APIService.request: $uri');
 
     if (response.statusCode >= 200 && response.statusCode < 300) {
       final json = jsonDecode(response.body);

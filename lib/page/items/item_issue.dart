@@ -85,7 +85,7 @@ class ItemIssue extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          if (issue.accountPublic!.avatar!.startsWith(baseUrl)) ...{
+          // if (issue.accountPublic!.avatar!.startsWith(baseUrl)) ...{
             ClipRRect(
               borderRadius: BorderRadius.circular(50),
               child: Container(
@@ -93,25 +93,25 @@ class ItemIssue extends StatelessWidget {
                 height: 32,
                 decoration: const BoxDecoration(),
                 child: Image.network(
-                  issue.accountPublic!.avatar!,
+                  issue.accountPublic?.avatar ?? 'assets/images/add.PNG',
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-          } else ...{
-            ClipRRect(
-              borderRadius: BorderRadius.circular(50),
-              child: Container(
-                width: 32,
-                height: 32,
-                decoration: const BoxDecoration(),
-                child: Image.network(
-                  baseUrl + issue.accountPublic!.avatar!,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          },
+          // } else ...{
+          //   ClipRRect(
+          //     borderRadius: BorderRadius.circular(50),
+          //     child: Container(
+          //       width: 32,
+          //       height: 32,
+          //       decoration: const BoxDecoration(),
+          //       child: Image.network(
+          //         baseUrl + issue.accountPublic!.avatar!,
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // },
           const SizedBox(
             width: 16,
           ),
